@@ -1,0 +1,29 @@
+
+.container{
+    width: 500px;
+    height: 500px;
+    margin-top: 20px;
+}
+
+#ajedrez{
+    position: relative;   
+}
+
+.mensaje{
+    width: 475px;
+    height: 50px;
+    background-color: rgba(202, 45, 45, 0.822);
+    color: white;
+    border: solid 2px black;
+    padding: 10px;
+    font-size: 1.7em;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    line-height: 50px;
+}
+
+.container, .mensaje{
+    margin-left: auto;
+    margin-right: auto;
+}
