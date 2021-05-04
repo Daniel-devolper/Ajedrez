@@ -79,7 +79,7 @@ const mover=(a,b,color)=>{
                             document.getElementById(`${a},${b}`).remove();
                             document.getElementById('ajedrez').innerHTML+='<div '+`id=${x},${y}`+' style="width:'+altoFicha +'px;height:' + anchoFicha+'px;    background-color:red;position:absolute;z-index:10;border-radius:100%;'+'left:'+((y)*posicionTablero+compensacionBordes)+'px;'+'top:'+((x)*posicionTablero+compensacionBordes)+'px;"'+`onclick="mover(${x},${y},'red')"`+'><div>';
                         }else
-                        if(derecha.style.backgroundColor !='red'  && y!=7){  
+                        if(derecha.style.backgroundColor !='red'  && y!=7 && x!=7){  
                                 if (document.getElementById(`${x+1},${y+1}`)==null) { 
                                 document.getElementById(`${a},${b}`).remove();
                                 document.getElementById(`${x},${y}`).remove();
@@ -104,7 +104,7 @@ const mover=(a,b,color)=>{
                                 document.getElementById(`${a},${b}`).remove();
                                 document.getElementById('ajedrez').innerHTML+='<div '+`id=${x},${y}`+' style="width:'+altoFicha +'px;height:' + anchoFicha+'px;background-color:yellow;position:absolute;z-index:10;border-radius:100%;'+'left:'+((y)*posicionTablero+compensacionBordes)+'px;'+'top:'+((x)*posicionTablero+compensacionBordes)+'px;"'+`onclick="mover(${x},${y},'yellow')"`+'><div>';
                             }else
-                                if (derecha.style.backgroundColor!='yellow' && y!=7)  {
+                                if (derecha.style.backgroundColor!='yellow' && y!=7 && x!=0)  {
                                     if (document.getElementById(`${x-1},${y+1}`)==null) {
                                         document.getElementById(`${a},${b}`).remove();
                                         document.getElementById(`${x},${y}`).remove();
@@ -126,7 +126,7 @@ const mover=(a,b,color)=>{
                  if (b!=7) { 
                     document.getElementById(`ta${x},${y}`).style.backgroundColor='black';    
                  }                 
-                 if (z!=0 ) { 
+                 if (a!=0 ) { 
                     document.getElementById(`ta${z},${w}`).style.backgroundColor='black';  
                  }
             })
@@ -140,7 +140,7 @@ const mover=(a,b,color)=>{
                             document.getElementById(`${a},${b}`).remove();
                             document.getElementById('ajedrez').innerHTML+='<div '+`id=${z},${w}`+' style="width:'+altoFicha +'px;height:' + anchoFicha+'px;    background-color:red;position:absolute;z-index:10;border-radius:100%;'+'left:'+((w)*posicionTablero+compensacionBordes)+'px;'+'top:'+((z)*posicionTablero+compensacionBordes)+'px;"'+`onclick="mover(${z},${w},'red')"`+'><div>';    
                         }else
-                            if (izquierda.style.backgroundColor !='red' && w!=0 ) {
+                            if (izquierda.style.backgroundColor !='red' && w!=0 && z!=7 ) {
                                 if (document.getElementById(`${z+1},${w-1}`)==null) {
                                     document.getElementById(`${a},${b}`).remove();
                                     document.getElementById(`${z},${w}`).remove();
@@ -164,7 +164,7 @@ const mover=(a,b,color)=>{
                                 document.getElementById(`${a},${b}`).remove();
                                 document.getElementById('ajedrez').innerHTML+='<div '+`id=${z},${w}`+' style="width:'+altoFicha +'px;height:' + anchoFicha+'px;background-color:yellow;position:absolute;z-index:10;border-radius:100%;'+'left:'+((w)*posicionTablero+compensacionBordes)+'px;'+'top:'+((z)*posicionTablero+compensacionBordes)+'px;"'+`onclick="mover(${z},${w},'yellow')"`+'><div>';       
                             }else
-                                if (izquierda.style.backgroundColor!='yellow' && w!=0) {
+                                if (izquierda.style.backgroundColor!='yellow' && w!=0 && z!=0) {
                                     if (document.getElementById(`${z-1},${w-1}`)==null) {
                                         document.getElementById(`${a},${b}`).remove();
                                         document.getElementById(`${z},${w}`).remove();
@@ -183,7 +183,7 @@ const mover=(a,b,color)=>{
                     }
                 }
                    //BORRAR LOS POSIBLES MOVIMIENTOS YA HECHOS
-                   if (z!=0 ) {
+                   if (a!=0 ) {
                    document.getElementById(`ta${z},${w}`).style.backgroundColor='black';
                    }
                    if (b!=7) { 
